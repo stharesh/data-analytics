@@ -1,2 +1,2 @@
 # data-analytics
-It contains my data analytics projects, assignments etc.
+Portfolio of end-to-end Data Analytics projects using SQL, Excel, Power BI, Python, and DAX, focused on solving real business problems.
