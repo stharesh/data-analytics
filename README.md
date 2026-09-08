@@ -66,6 +66,6 @@ Excel · Power BI · Python · DAX · MySQL Workbench · GitHub
 
 ## 👤 About This Portfolio
 
-Each project is being refined with a hiring-manager perspective: clear problem definition, readable implementation, evidence of results, and honest documentation of assumptions and limitations.
+Each project emphasizes clear problem definition, readable implementation, evidence of results, and honest documentation of assumptions and limitations.
 
 More projects will be added as the portfolio is organized and refined.
