@@ -68,12 +68,3 @@ The optimization is backed by the SQL used before and after indexing plus the ob
 The repository contains curated SQL and selected derived outputs rather than raw MySQL Workbench history. Source datasets may be subject to their original distribution terms and are not assumed to be redistributable.
 
 Raw Workbench history is intentionally excluded because it can contain local credentials, connection details, and machine-specific paths.
-
-## Interview Talking Points
-
-1. Explain why `fact_gross_price` is joined using both `product_code` and fiscal year.
-2. Explain the difference between a logical join relationship and a physical foreign key.
-3. Explain when `DENSE_RANK()` is preferable to `ROW_NUMBER()`.
-4. Explain how the customer index changed the execution plan.
-5. Explain how gross sales become net sales through deduction transformations.
-6. Explain how forecast accuracy should handle zero actual quantities.
