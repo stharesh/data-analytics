@@ -1,53 +1,30 @@
 # SQL Sales Analytics & Query Optimization
 
-A business-focused MySQL analytics project using a 1.4M+ row sales dataset to analyze sales performance, customers, products, markets, discounts, and forecast accuracy. The project also demonstrates reusable SQL database objects and query-performance optimization using indexes and `EXPLAIN ANALYZE`.
+A business-focused **MySQL analytics project** using a 1.4M+ row retail sales dataset to analyze sales performance, customers, products, markets, discounts, and forecast accuracy. The project also demonstrates reusable SQL database objects and query-performance optimization using indexes and `EXPLAIN ANALYZE`.
 
-## Project Highlights
+## Why this project matters
 
-- **1,425,706** records in `fact_sales_monthly`
-- **4 analytical views** for gross-to-net sales transformations
-- **9 stored procedures** identified in the source learning work
-- **2 SQL functions** for fiscal-year and fiscal-quarter logic
-- CTEs, subqueries, temporary tables, joins, and window functions
-- Customer, market, product, and forecast analysis
-- Query optimization using indexing and `EXPLAIN ANALYZE`
-
-## Business Questions
+This project is organized around the type of questions an analytics or business team would ask—not just around SQL syntax.
 
 - How are monthly and yearly sales performing?
-- Which markets generate the highest sales?
-- Which customers contribute the most net sales?
-- Which products perform best within each division?
-- How does discounting affect net sales?
-- How does actual sales performance compare with forecasts?
-- How can query performance be improved on a large fact table?
+- Which markets and customers contribute the most?
+- Which products lead each division?
+- How do discounts affect net sales?
+- How accurate are forecasts versus actual sales?
+- How can a query against a large fact table be optimized?
 
-## Data Model
+## Technical Highlights
 
-The sales analysis uses a logical fact/dimension structure. Relationships are established through business keys in SQL joins rather than claiming a separately authored ER diagram for the sales database.
+- **MySQL:** joins, aggregations, CTEs, subqueries, temporary tables
+- **Advanced SQL:** window functions, `DENSE_RANK()`, fiscal-period analysis
+- **Database objects:** views, stored procedures, stored functions
+- **Data modeling:** fact/dimension analytical structure, generated columns, composite keys
+- **Performance:** indexes and `EXPLAIN ANALYZE`
+- **Business analytics:** gross sales, net sales, market share, product ranking, forecast accuracy
 
-```text
-                    dim_customer
-                         |
-                    customer_code
-                         |
-                         v
-                 fact_sales_monthly
-                    /           \
-           product_code         date
-                 |                |
-                 v                v
-           dim_product         dim_date
-                 |
-                 v
-          fact_gross_price
-```
+## Performance Case Study
 
-Supporting datasets include forecast, freight, manufacturing-cost, pre-invoice deduction, and post-invoice deduction data.
-
-## Query Performance Case Study
-
-A customer-level query initially used a table scan across approximately 1.43M sales rows. After adding an index on `customer_code`, `EXPLAIN ANALYZE` showed an index lookup instead.
+A customer-level filter initially used a table scan across approximately **1.43M rows**. After adding an index on `customer_code`, the observed execution plan changed to an **index lookup**.
 
 | Metric | Before | After |
 |---|---:|---:|
@@ -55,38 +32,43 @@ A customer-level query initially used a table scan across approximately 1.43M sa
 | Rows at relevant plan node | ~1,425,706 | ~8,194 |
 | Reported plan-node time | ~1,396 ms | ~60 ms |
 
-The timing comparison is reported at the relevant execution-plan node; it is not presented as a claim that every end-to-end query becomes exactly 23x faster.
+The timing is reported from the relevant execution-plan node and is not presented as a universal end-to-end speedup claim.
 
-## SQL Techniques
-
-**Analytics:** aggregations, fiscal-period analysis, joins, CTEs, subqueries, temporary tables, window functions, ranking.
-
-**Database development:** views, stored procedures, user-defined functions, logical fact/dimension analysis.
-
-**Performance:** indexes, execution plans, `EXPLAIN ANALYZE`.
-
-## Repository Structure
+## Project Structure
 
 ```text
 sql-sales-analytics/
 ├── docs/
-├── sql/
-│   ├── 01_data_exploration/
-│   ├── 02_business_analysis/
-│   ├── 03_advanced_sql/
-│   ├── 04_views/
-│   ├── 05_stored_procedures/
-│   ├── 06_functions/
-│   └── 07_performance_optimization/
-├── data/
-├── outputs/
-└── screenshots/
+│   ├── business-questions.md
+│   ├── data-dictionary.md
+│   ├── data-model.md
+│   ├── query-optimization.md
+│   └── validation-notes.md
+└── sql/
+    ├── 01_schema/
+    ├── 02_business_analysis/
+    ├── 03_advanced_sql/
+    ├── 04_views/
+    ├── 05_functions/
+    ├── 06_stored_procedures/
+    └── 07_performance_optimization/
 ```
 
-## Data Availability
+## Data Model
 
-The repository contains SQL definitions and selected derived outputs. Source datasets may be subject to their original distribution terms and are not assumed to be redistributable.
+The analysis uses a logical fact/dimension structure centered on `fact_sales_monthly`. Business keys connect sales to customer, product, date, pricing, forecast, and deduction data. See [`docs/data-model.md`](./docs/data-model.md) for the documented relationships and modeling caveats.
 
-## Notes on Portfolio Preparation
+## Data & Reproducibility
 
-The SQL in this repository is based on original learning and analytical work and has been organized for clarity. Intermediate experiments and raw Workbench history are intentionally excluded from the recruiter-facing structure.
+The repository contains curated SQL and selected derived outputs rather than raw MySQL Workbench history. Source datasets may be subject to their original distribution terms and are not assumed to be redistributable.
+
+Raw Workbench history is intentionally excluded because it can contain local credentials, connection details, and machine-specific paths.
+
+## Interview Talking Points
+
+1. Explain why `fact_gross_price` is joined using both `product_code` and fiscal year.
+2. Explain the difference between a logical join relationship and a physical foreign key.
+3. Explain when `DENSE_RANK()` is preferable to `ROW_NUMBER()`.
+4. Explain how the customer index changed the execution plan.
+5. Explain how gross sales become net sales through deduction transformations.
+6. Explain how forecast accuracy should handle zero actual quantities.
