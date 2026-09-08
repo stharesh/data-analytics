@@ -32,7 +32,7 @@ A customer-level filter initially used a table scan across approximately **1.43M
 | Rows at relevant plan node | ~1,425,706 | ~8,194 |
 | Reported plan-node time | ~1,396 ms | ~60 ms |
 
-The timing is reported from the relevant execution-plan node and is not presented as a universal end-to-end speedup claim.
+The timing is reported from the relevant execution-plan node and is not presented as a universal end-to-end speedup claim. See [`docs/performance-case-study.md`](./docs/performance-case-study.md) for the methodology and engineering caveats.
 
 ## Project Structure
 
@@ -42,6 +42,7 @@ sql-sales-analytics/
 │   ├── business-questions.md
 │   ├── data-dictionary.md
 │   ├── data-model.md
+│   ├── performance-case-study.md
 │   ├── query-optimization.md
 │   └── validation-notes.md
 └── sql/
@@ -57,6 +58,10 @@ sql-sales-analytics/
 ## Data Model
 
 The analysis uses a logical fact/dimension structure centered on `fact_sales_monthly`. Business keys connect sales to customer, product, date, pricing, forecast, and deduction data. See [`docs/data-model.md`](./docs/data-model.md) for the documented relationships and modeling caveats.
+
+## Performance Evidence
+
+The optimization is backed by the SQL used before and after indexing plus the observed `EXPLAIN ANALYZE` results. See [`docs/performance-case-study.md`](./docs/performance-case-study.md) and [`sql/07_performance_optimization/`](./sql/07_performance_optimization/) for the reproducible query and index definition.
 
 ## Data & Reproducibility
 
