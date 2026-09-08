@@ -43,16 +43,6 @@ Document the business takeaway
 
 This portfolio is intended to demonstrate a practical workflow rather than a collection of isolated syntax exercises.
 
-## 📂 Portfolio Roadmap
-
-| Project area | Status |
-|---|---|
-| SQL Sales Analytics & Query Optimization | ✅ Featured |
-| Excel Business Analysis | 🔜 Planned |
-| Power BI Business Dashboard | 🔜 Planned |
-| Python Data Analysis | 🔜 Planned |
-| DAX / Analytical Modeling | 🔜 Planned |
-
 ## 🛠️ Core Skills
 
 **SQL & Databases**  
@@ -67,5 +57,3 @@ Excel · Power BI · Python · DAX · MySQL Workbench · GitHub
 ## 👤 About This Portfolio
 
 Each project emphasizes clear problem definition, readable implementation, evidence of results, and honest documentation of assumptions and limitations.
-
-More projects will be added as the portfolio is organized and refined.
