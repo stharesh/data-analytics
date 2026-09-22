@@ -34,11 +34,35 @@ A customer-level filter initially used a table scan across approximately **1.43M
 
 The timing is reported from the relevant execution-plan node and is not presented as a universal end-to-end speedup claim. See [`docs/performance-case-study.md`](./docs/performance-case-study.md) for the methodology and engineering caveats.
 
+## Visual Evidence
+
+### Data Model
+
+![SQL Sales Analytics data model](./docs/images/data_model.png)
+
+The diagram provides a visual view of the analytical tables and their relationships used throughout the project.
+
+### Query Optimization
+
+![Query optimization evidence](./docs/images/query_optimization.png)
+
+The MySQL Workbench execution-plan evidence complements the before/after SQL and documents the observed optimization work.
+
+### Dataset Scale
+
+![Dataset row count](./docs/images/total_rows.png)
+
+The screenshot provides visual evidence of the working dataset scale referenced in the project.
+
 ## Project Structure
 
 ```text
 sql-sales-analytics/
 ├── docs/
+│   ├── images/
+│   │   ├── data_model.png
+│   │   ├── query_optimization.png
+│   │   └── total_rows.png
 │   ├── business-questions.md
 │   ├── data-dictionary.md
 │   ├── data-model.md
