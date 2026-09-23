@@ -7,7 +7,7 @@ The project is based on MySQL Workbench learning and analytical work performed a
 ## Verified portfolio claims
 
 - `fact_sales_monthly` contains 1,425,706 records in the working dataset referenced by the analysis.
-- The work includes 9 distinct stored procedures in the source history and 2 SQL functions: fiscal-year and fiscal-quarter helpers.
+- The repository includes 6 stored procedures and 2 SQL functions: fiscal-year and fiscal-quarter helpers.
 - The project uses joins, CTEs, subqueries, temporary tables, window functions, views, generated columns, composite keys, indexes, and `EXPLAIN ANALYZE`.
 - The customer filtering case study changed the observed execution plan from a table scan to an index lookup after adding an index on `customer_code`.
 
