@@ -30,9 +30,8 @@ Running the same `EXPLAIN ANALYZE` query showed an index lookup on `idx_customer
 |---|---:|---:|
 | Access method | Table scan | Index lookup |
 | Rows at relevant plan node | ~1,425,706 | ~8,194 |
-| Reported plan-node time | ~1,396 ms | ~60 ms |
 
-The comparison documents the observed execution-plan change. Plan-node timing is not represented as a universal end-to-end speedup claim.
+The comparison documents the observed execution-plan change. Execution time depends on the database version, hardware, data distribution, and workload, so the result is not represented as a universal speedup claim.
 
 ## Key lesson
 

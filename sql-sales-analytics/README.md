@@ -30,23 +30,20 @@ A customer-level filter initially used a table scan across approximately **1.43M
 |---|---:|---:|
 | Access method | Table scan | Index lookup |
 | Rows at relevant plan node | ~1,425,706 | ~8,194 |
-| Reported plan-node time | ~1,396 ms | ~60 ms |
 
-The timing is reported from the relevant execution-plan node and is not presented as a universal end-to-end speedup claim. See [`docs/performance-case-study.md`](./docs/performance-case-study.md) for the methodology and engineering caveats.
+The recorded plan demonstrates a more selective access path with substantially fewer rows at the relevant plan node. Results will vary by database version, hardware, data distribution, and workload. See [`docs/performance-case-study.md`](./docs/performance-case-study.md) for the methodology and engineering caveats.
 
 ## Visual Evidence
 
 ### Data Model
 
-![SQL Sales Analytics data model](./docs/images/data_model.png)
-
-The diagram provides a visual view of the analytical tables and their relationships used throughout the project.
+The project model is documented as a logical relationship diagram in [`docs/data-model.md`](./docs/data-model.md). The diagram shows the sales fact, dimensions, pricing, deductions, and forecast join paths used by the SQL.
 
 ### Query Optimization
 
 ![Query optimization evidence](./docs/images/query_optimization.png)
 
-The MySQL Workbench execution-plan evidence complements the before/after SQL and documents the observed optimization work.
+The captured execution-plan output complements the before/after SQL and documents the observed change from a table scan to an index lookup.
 
 ### Dataset Scale
 
@@ -60,7 +57,6 @@ The screenshot provides visual evidence of the working dataset scale referenced 
 sql-sales-analytics/
 ├── docs/
 │   ├── images/
-│   │   ├── data_model.png
 │   │   ├── query_optimization.png
 │   │   └── total_rows.png
 │   ├── business-questions.md

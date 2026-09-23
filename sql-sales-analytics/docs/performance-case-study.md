@@ -28,9 +28,8 @@ The same query was then executed again with `EXPLAIN ANALYZE`.
 |---|---:|---:|
 | Access method | Table scan | Index lookup |
 | Rows at relevant plan node | ~1,425,706 | ~8,194 |
-| Reported plan-node time | ~1,396 ms | ~60 ms |
 
-These figures come from the observed execution-plan outputs used in the project. The timing is reported at the relevant plan node and should not be interpreted as a universal end-to-end speedup for every environment or workload.
+These figures come from the observed execution-plan outputs used in the project. Execution time varies by database version, hardware, data distribution, and workload, so this case study documents the plan change and rows processed rather than making a universal timing claim.
 
 ## Why the index helps
 

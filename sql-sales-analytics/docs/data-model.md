@@ -36,7 +36,7 @@ The central sales fact is analyzed at the business grain of:
 
 **`date + product_code + customer_code`**
 
-The working dataset contains approximately **1.43 million records**. fileciteturn60file0
+The working dataset contains approximately **1.43 million records**.
 
 The analytical work also derives `fiscal_year` from the calendar date and uses it throughout pricing and fiscal-period analysis.
 
@@ -51,7 +51,7 @@ Forecast records use the same date/product/customer business grain, allowing act
 - `product_code`
 - fiscal year
 
-This matters because the applicable product price can depend on the financial year rather than product alone. The reusable `gross_sales` view follows this same join logic. fileciteturn30file0
+This matters because the applicable product price can depend on the financial year rather than product alone. The reusable `gross_sales` view follows this same join logic.
 
 ## Core relationships
 
@@ -65,7 +65,7 @@ This matters because the applicable product price can depend on the financial ye
 | Sales | Pre-invoice deductions | `customer_code + fiscal_year` | Discount adjustment |
 | Sales | Post-invoice deductions | `date + product_code + customer_code` | Post-invoice adjustment |
 
-These relationships are the logical join paths used by the project, not a claim of enforced database constraints. fileciteturn59file0
+These relationships are the logical join paths used by the project, not a claim of enforced database constraints.
 
 ## Supporting tables
 

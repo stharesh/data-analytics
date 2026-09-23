@@ -1,8 +1,10 @@
 # Data Analytics Portfolio
 
-**Business-focused analytics projects built with SQL, Excel, Power BI, Python, and DAX.**
+**An evolving portfolio of business-focused data analytics projects.**
 
-I use data to answer business questions, build reusable analytical solutions, and communicate results clearly. Projects are organized to show not only the final analysis, but also the reasoning, data model, SQL implementation, validation, and performance considerations behind the work.
+I use data to answer business questions, build reusable analytical solutions, and communicate results clearly. Each completed project includes the problem context, analytical approach, implementation, evidence, and documented assumptions.
+
+> **Current focus:** SQL Sales Analytics & Query Optimization. A Python analytics project is in progress; Power BI, Excel, DAX, Microsoft Fabric, and Databricks projects will be added as completed work is ready to share.
 
 ## ⭐ Featured Project
 
@@ -43,7 +45,7 @@ Document the business takeaway
 
 This portfolio is intended to demonstrate a practical workflow rather than a collection of isolated syntax exercises.
 
-## 🛠️ Core Skills
+## 🛠️ Skills demonstrated in this repository
 
 **SQL & Databases**  
 MySQL · Joins · CTEs · Window Functions · Views · Stored Procedures · Stored Functions · Query Optimization
@@ -52,8 +54,22 @@ MySQL · Joins · CTEs · Window Functions · Views · Stored Procedures · Stor
 Business Questions · KPI Analysis · Sales Analysis · Market Analysis · Forecast Accuracy · Data Validation
 
 **Tools**  
-Excel · Power BI · Python · DAX · MySQL Workbench · GitHub
+MySQL · MySQL Workbench · GitHub
+
+## 🔜 Portfolio roadmap
+
+This repository is designed to grow into a collection of independently reviewable analytics projects. New work will be added only when it includes a clear business question, reproducible analysis, and evidence of the result.
+
+| Area | Status | Planned evidence |
+|---|---|---|
+| Python analytics | In progress | Data preparation, analysis, and documented findings |
+| Power BI & DAX | Planned | Data model, dashboard screenshots, KPI definitions, and insights |
+| Excel analytics | Planned | Workbook, methodology, and decision-focused analysis |
+| Microsoft Fabric | Planned | Architecture, transformations, and analytical outputs |
+| Databricks | Planned | Notebook or pipeline, data transformations, and results |
+
+Completed projects will use descriptive top-level folders such as `python-customer-churn-analysis/` or `power-bi-sales-dashboard/` so each project can be reviewed independently.
 
 ## 👤 About This Portfolio
 
-Each project emphasizes clear problem definition, readable implementation, evidence of results, and honest documentation of assumptions and limitations.
+Each project emphasizes clear problem definition, readable implementation, evidence of results, and honest documentation of assumptions and limitations. Skills are listed as demonstrated only when a corresponding project artifact is available in this repository.
